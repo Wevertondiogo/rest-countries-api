@@ -1,0 +1,34 @@
+.card-group {
+  margin: 40px auto;
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  mat-card {
+    width: 20%;
+    height: 340px;
+    margin: 25px 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px hsl(0, 0%, 52%);
+    img {
+      height: 60%;
+    }
+    h3 {
+      font: {
+        size: 1.1rem;
+        family: "Nunito Sans", sans-serif;
+        weight: 800;
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        margin: 5px 0;
+        list-style: none;
+        font-family: "Nunito Sans", sans-serif;
+      }
+    }
+  }
+}

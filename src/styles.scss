@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: hsl(0, 0%, 98%);
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif, Roboto, "Helvetica Neue";
+  .custom {
+    width: 15%;
+    height: 100%;
+  }
+  .ng-select-container {
+    font: {
+      family: "Nunito Sans", sans-serif;
+      weight: 600;
+    }
+    color: hsl(200, 15%, 8%) !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: hsl(0, 0%, 100%) !important;
+    box-shadow: 0 0 2px hsl(0, 0%, 52%) !important;
+  }
+}

@@ -1,0 +1,40 @@
+.container {
+  width: 90%;
+  height: 60px;
+  margin: 60px auto auto auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    height: 100%;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 2px hsl(0, 0%, 52%);
+    mat-form-field {
+      height: 60px;
+    }
+    input {
+      width: 88%;
+      border: none;
+      color: hsl(200, 15%, 8%);
+      font: {
+        family: "Nunito Sans";
+        size: 1rem;
+        weight: 600;
+      }
+      &:focus {
+        border: none !important;
+        outline: 0;
+        // background-color: red;
+      }
+    }
+
+    .material-icons {
+      padding-left: 20px;
+      color: hsl(200, 15%, 8%);
+    }
+  }
+}

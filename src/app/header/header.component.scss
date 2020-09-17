@@ -1,0 +1,39 @@
+mat-toolbar {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 3px hsl(0, 0%, 52%);
+  padding: 12px 0;
+  &-row {
+    width: 90%;
+    margin: 0 auto;
+    .title {
+      color: hsl(200, 15%, 8%);
+      font: {
+        family: "Nunito Sans";
+        size: 1.6rem;
+        weight: 800;
+      }
+    }
+    .toggle-mode {
+      color: hsl(200, 15%, 8%);
+      font: {
+        family: "Nunito Sans";
+        size: 0.9rem;
+        weight: 800;
+      }
+    }
+    .spacer {
+      flex: 1 1 auto;
+    }
+    .mode {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 22px;
+        height: 22px;
+        margin-right: 6px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
