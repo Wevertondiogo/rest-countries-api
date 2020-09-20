@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [SearchComponent],
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     NgSelectModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [SearchComponent],
 })

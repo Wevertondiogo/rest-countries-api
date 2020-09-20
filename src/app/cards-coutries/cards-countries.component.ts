@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AppService } from './../app.service';
-import { Country } from './../coutry.model';
+import { Country } from './../country.model';
 
 @Component({
   selector: 'app-cards-countries',
@@ -10,11 +10,24 @@ import { Country } from './../coutry.model';
 })
 export class CardsCountriesComponent implements OnInit {
   countries: Country[];
-  constructor(private service: AppService) {}
+  searchCountries: Country[];
+  bool: boolean = false;
+  constructor(private _service: AppService) {}
 
   ngOnInit(): void {
-    this.service.getCoutries().subscribe((country: Country[]) => {
+    this._service.getCoutries().subscribe((country: Country[]) => {
       this.countries = country;
+    });
+    this._service.data.subscribe((dataCountry) => {
+      if (this.countries != undefined) {
+        this.searchCountries = this.countries.filter(
+          (country) => country.name === dataCountry
+        );
+        if (this.searchCountries.length > 0) this.bool = true;
+        else {
+          this.bool = false;
+        }
+      }
     });
   }
 }

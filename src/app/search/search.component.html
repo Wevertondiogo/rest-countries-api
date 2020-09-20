@@ -1,7 +1,14 @@
 <div class="container">
   <form>
     <div class="material-icons">search</div>
-    <input type="text" placeholder="Search for a country..." />
+    <input
+      type="text"
+      placeholder="Search for a country..."
+      #input
+      [(ngModel)]="searchText"
+      name="searchText"
+      (input)="search(input)"
+    />
   </form>
   <!-- <select>
     <option data-display="Select">Nothing</option>

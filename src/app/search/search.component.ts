@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { AppService } from './../app.service';
+import { Country } from './../country.model';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -7,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   selectedCity: any;
+  searchText: string;
 
-  constructor() {}
+  constructor(private _service: AppService) {}
   cities = [
     { id: 1, name: 'Vilnius' },
     { id: 2, name: 'Kaunas' },
@@ -18,4 +22,10 @@ export class SearchComponent implements OnInit {
   ];
 
   ngOnInit(): void {}
+  search(e): void {
+    if (e.value.length === 1) {
+      e.value = e.value.toUpperCase();
+    }
+    this._service.searchCountries(this.searchText.trim());
+  }
 }

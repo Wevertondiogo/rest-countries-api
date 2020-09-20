@@ -1,13 +1,28 @@
 <div class="card-group">
-  <mat-card *ngFor="let country of countries">
-    <img mat-card-image [src]="country.flag" />
-    <mat-card-content>
-      <h3>{{ country.name }}</h3>
-      <ul>
-        <li><strong>Population:</strong> {{ country.population }}</li>
-        <li><strong>Region:</strong> {{ country.region }}</li>
-        <li><strong>Capital:</strong> {{ country.capital }}</li>
-      </ul>
-    </mat-card-content>
-  </mat-card>
+  <ng-container *ngIf="!bool">
+    <mat-card *ngFor="let country of countries">
+      <img mat-card-image [src]="country.flag" />
+      <mat-card-content>
+        <h3>{{ country.name }}</h3>
+        <ul>
+          <li><strong>Population:</strong> {{ country.population }}</li>
+          <li><strong>Region:</strong> {{ country.region }}</li>
+          <li><strong>Capital:</strong> {{ country.capital }}</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-container *ngIf="bool">
+    <mat-card *ngFor="let country of searchCountries">
+      <img mat-card-image [src]="country.flag" />
+      <mat-card-content>
+        <h3>{{ country.name }}</h3>
+        <ul>
+          <li><strong>Population:</strong> {{ country.population }}</li>
+          <li><strong>Region:</strong> {{ country.region }}</li>
+          <li><strong>Capital:</strong> {{ country.capital }}</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
 </div>
