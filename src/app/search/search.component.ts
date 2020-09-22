@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { FormControl } from '@angular/forms';
 import { AppService } from './../app.service';
-import { Country } from './../country.model';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -13,19 +10,21 @@ export class SearchComponent implements OnInit {
   searchText: string;
 
   constructor(private _service: AppService) {}
-  cities = [
-    { id: 1, name: 'Vilnius' },
-    { id: 2, name: 'Kaunas' },
-    { id: 3, name: 'Pavilnys', disabled: true },
-    { id: 4, name: 'Pabradė' },
-    { id: 5, name: 'Klaipėda' },
-  ];
-
-  ngOnInit(): void {}
+  regions: string[];
+  ngOnInit(): void {
+    this._service.getCoutries().subscribe((country) => {
+      const filterRegions = country
+        .map((item) => item.region)
+        .filter((item, i, array) => i === array.indexOf(item) && item !== '');
+      this.regions = filterRegions.sort();
+    });
+  }
   search(e): void {
-    if (e.value.length === 1) {
-      e.value = e.value.toUpperCase();
-    }
+    if (e.value.length === 1) e.value = e.value.toUpperCase();
     this._service.searchCountries(this.searchText.trim());
+  }
+
+  sendRegion(e: string) {
+    this._service.setRegion(e);
   }
 }

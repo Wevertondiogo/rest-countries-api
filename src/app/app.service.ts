@@ -10,8 +10,10 @@ import { Country } from './country.model';
   providedIn: 'root',
 })
 export class AppService {
-  private dataSource = new BehaviorSubject<string>('');
-  data = this.dataSource.asObservable();
+  private dataSourceSearch = new BehaviorSubject<string>('');
+  private dataSourceRegion = new BehaviorSubject<string>('');
+  dataSearch = this.dataSourceSearch.asObservable();
+  dataRegion = this.dataSourceRegion.asObservable();
   constructor(private _http: HttpClient) {}
 
   httpOptions = {
@@ -22,7 +24,15 @@ export class AppService {
     return this._http.get<Country[]>(environment.baseUrl).pipe(retry(2));
   }
   searchCountries(country: string) {
-    return this.dataSource.next(country);
+    return this.dataSourceSearch.next(country);
+  }
+  setRegion(region: string) {
+    return this.dataSourceRegion.next(region);
   }
 
+  getRegion(region: string): Observable<Country[]> {
+    return this._http
+      .get<Country[]>(`https://restcountries.eu/rest/v2/region/${region}`)
+      .pipe(retry(2));
+  }
 }
