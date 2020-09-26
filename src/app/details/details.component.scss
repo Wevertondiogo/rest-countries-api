@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  // background-color: red;
+  margin-top: 5%;
+  .back {
+    width: 88%;
+    margin: 0 auto;
+    .btn {
+      text-align: center;
+      padding: 2px 35px;
+      box-shadow: 0 0 3px hsl(0, 0%, 52%);
+      color: hsl(200, 15%, 8%);
+      font: {
+        weight: 600;
+        family: "Nunito Sans", sans-serif;
+      }
+      // .material-icons {
+      //   padding-right: 2px;
+      // }
+    }
+  }
+  .box {
+    @extend .back;
+    width: 94%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    .img {
+      width: 43%;
+      height: 420px;
+    }
+    .info-country {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 5%;
+      width: 40%;
+
+      h1 {
+        width: 100%;
+        color: hsl(200, 15%, 8%);
+
+        font: {
+          size: 2.2rem;
+          weight: 800;
+          family: "Nunito Sans", sans-serif;
+        }
+      }
+      .list {
+        display: flex;
+        justify-content: space-between;
+        ul {
+          margin: 0;
+          padding: 0;
+          font: {
+            size: 1rem;
+            weight: 600;
+            family: "Nunito Sans", sans-serif;
+          }
+          &:nth-child(2) {
+            margin-left: 10%;
+          }
+          li {
+            list-style: none;
+            margin: 18px 0;
+            color: hsl(200, 15%, 8%);
+          }
+        }
+      }
+    }
+    .footer {
+      margin: 7% 0 0 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .group-btn {
+        width: 78%;
+        height: 40px;
+        display: flex;
+        justify-content: baseline;
+        flex-wrap: wrap;
+        .btn {
+          color: hsl(200, 15%, 8%);
+          margin: 5px;
+          padding: 0 38px;
+          height: 28px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,14 @@
 <div class="card-group">
   <ng-container *ngIf="boolRegion === boolSearch && !boolSearch && !boolRegion">
-    <mat-card *ngFor="let country of countries">
+    <mat-card
+      *ngFor="let country of countries"
+      (click)="sendRoute(country.name)"
+    >
       <img mat-card-image [src]="country.flag" />
       <mat-card-content>
         <h3>{{ country.name }}</h3>
         <ul>
-          <li><strong>Population:</strong> {{ country.population }}</li>
+          <li><strong>Population:</strong> {{ country.population | number }}</li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Capital:</strong> {{ country.capital }}</li>
         </ul>
@@ -13,12 +16,15 @@
     </mat-card>
   </ng-container>
   <ng-container *ngIf="boolSearch">
-    <mat-card *ngFor="let country of searchCountries">
+    <mat-card
+      *ngFor="let country of searchCountries"
+      (click)="sendRoute(country.name)"
+    >
       <img mat-card-image [src]="country.flag" />
       <mat-card-content>
         <h3>{{ country.name }}</h3>
         <ul>
-          <li><strong>Population:</strong> {{ country.population }}</li>
+          <li><strong>Population:</strong> {{ country.population | number }}</li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Capital:</strong> {{ country.capital }}</li>
         </ul>
@@ -26,12 +32,12 @@
     </mat-card>
   </ng-container>
   <ng-container *ngIf="boolRegion && !boolSearch">
-    <mat-card *ngFor="let country of regions">
+    <mat-card *ngFor="let country of regions" (click)="sendRoute(country.name)">
       <img mat-card-image [src]="country.flag" />
       <mat-card-content>
         <h3>{{ country.name }}</h3>
         <ul>
-          <li><strong>Population:</strong> {{ country.population }}</li>
+          <li><strong>Population:</strong> {{ country.population | number }}</li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Capital:</strong> {{ country.capital }}</li>
         </ul>

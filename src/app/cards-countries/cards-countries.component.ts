@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AppService } from './../app.service';
 import { Country } from './../country.model';
@@ -14,7 +15,7 @@ export class CardsCountriesComponent implements OnInit {
   regions: Country[];
   boolSearch: boolean = false;
   boolRegion: boolean = false;
-  constructor(private _service: AppService) {}
+  constructor(private _service: AppService, private router: Router) {}
 
   ngOnInit(): void {
     this._service.getCoutries().subscribe((country: Country[]) => {
@@ -45,5 +46,8 @@ export class CardsCountriesComponent implements OnInit {
         });
       } else if (region === undefined) this.boolRegion = false;
     });
+  }
+  sendRoute(e): void {
+    this.router.navigate([`/details/${e}`]);
   }
 }

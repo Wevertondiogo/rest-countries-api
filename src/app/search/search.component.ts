@@ -12,6 +12,9 @@ export class SearchComponent implements OnInit {
   constructor(private _service: AppService) {}
   regions: string[];
   ngOnInit(): void {
+    this.getRegions();
+  }
+  getRegions(): void {
     this._service.getCoutries().subscribe((country) => {
       const filterRegions = country
         .map((item) => item.region)

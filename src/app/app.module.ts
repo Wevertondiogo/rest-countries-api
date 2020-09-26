@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './header/header.module';
-import { SearchModule } from './search/search.module';
-import { CardsCountriesModule } from './cards-coutries/cards-countries.module';
+
+import { HomeModule } from './home/home.module';
+import { DetailsModule } from './details/details.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +17,9 @@ import { CardsCountriesModule } from './cards-coutries/cards-countries.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
     HeaderModule,
-    SearchModule,
-    CardsCountriesModule,
+    HomeModule,
+    DetailsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

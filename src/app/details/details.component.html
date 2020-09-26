@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="back">
+    <button mat-raised-button class="btn" (click)="back()">
+      <div class="material-icons">keyboard_backspace</div>
+      Back
+    </button>
+  </div>
+  <div class="box" *ngFor="let c of countryInfos">
+    <img [src]="c.flag" alt="" class="img" />
+    <div class="info-country">
+      <h1>{{ c.name }}</h1>
+      <div class="list">
+        <ul>
+          <li><strong>Native Name:</strong> {{ c.nativeName }}</li>
+          <li><strong>Population:</strong> {{ c.population | number }}</li>
+          <li><strong>Region:</strong> {{ c.region }}</li>
+          <li><strong>Sub Region:</strong> {{ c.subregion }}</li>
+          <li><strong>Capital:</strong> {{ c.capital }}</li>
+        </ul>
+        <ul>
+          <li><strong>Top Level Domain:</strong> {{ c.topLevelDomain }}</li>
+          <li><strong>Currencies:</strong> {{ currencies }}</li>
+          <li><strong>Languages:</strong> {{ languages }}</li>
+        </ul>
+      </div>
+      <div class="footer">
+        <strong>Border Countries:</strong>
+        <div class="group-btn">
+          <button mat-raised-button class="btn" *ngFor="let border of borders">
+            {{ border }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
