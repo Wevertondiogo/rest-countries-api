@@ -6,17 +6,18 @@
     width: 88%;
     margin: 0 auto;
     .btn {
-      text-align: center;
       padding: 2px 35px;
       box-shadow: 0 0 3px hsl(0, 0%, 52%);
       color: hsl(200, 15%, 8%);
+      &.darkMode {
+        background-color: hsl(209, 23%, 22%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: 0 0 3px hsl(209, 23%, 22%);
+      }
       font: {
         weight: 600;
         family: "Nunito Sans", sans-serif;
       }
-      // .material-icons {
-      //   padding-right: 2px;
-      // }
     }
   }
   .box {
@@ -25,6 +26,9 @@
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
+    &.darkMode {
+      color: hsl(0, 0%, 100%);
+    }
     .img {
       width: 43%;
       height: 420px;
@@ -39,6 +43,9 @@
       h1 {
         width: 100%;
         color: hsl(200, 15%, 8%);
+        &.darkMode {
+          color: hsl(0, 0%, 100%);
+        }
 
         font: {
           size: 2.2rem;
@@ -52,6 +59,9 @@
         ul {
           margin: 0;
           padding: 0;
+          &.darkMode {
+            color: hsl(0, 0%, 100%);
+          }
           font: {
             size: 1rem;
             weight: 600;
@@ -64,6 +74,9 @@
             list-style: none;
             margin: 18px 0;
             color: hsl(200, 15%, 8%);
+            &.darkMode {
+              color: hsl(0, 0%, 100%);
+            }
           }
         }
       }
@@ -87,6 +100,11 @@
           height: 28px;
           display: flex;
           align-items: center;
+          &.darkMode {
+            background-color: hsl(209, 23%, 22%);
+            color: hsl(0, 0%, 100%);
+            box-shadow: 0 0 3px hsl(209, 23%, 22%);
+          }
         }
       }
     }

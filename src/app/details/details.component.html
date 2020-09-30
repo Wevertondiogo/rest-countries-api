@@ -1,32 +1,62 @@
 <div class="container">
   <div class="back">
-    <button mat-raised-button class="btn" (click)="back()">
+    <button
+      mat-raised-button
+      class="btn"
+      (click)="back()"
+      [ngClass]="mode ? 'darkMode' : ''"
+    >
       <div class="material-icons">keyboard_backspace</div>
       Back
     </button>
   </div>
-  <div class="box" *ngFor="let c of countryInfos">
+  <div
+    class="box"
+    *ngFor="let c of countryInfos"
+    [ngClass]="mode ? 'darkMode' : ''"
+  >
     <img [src]="c.flag" alt="" class="img" />
     <div class="info-country">
-      <h1>{{ c.name }}</h1>
+      <h1 [ngClass]="mode ? 'darkMode' : ''">{{ c.name }}</h1>
       <div class="list">
         <ul>
-          <li><strong>Native Name:</strong> {{ c.nativeName }}</li>
-          <li><strong>Population:</strong> {{ c.population | number }}</li>
-          <li><strong>Region:</strong> {{ c.region }}</li>
-          <li><strong>Sub Region:</strong> {{ c.subregion }}</li>
-          <li><strong>Capital:</strong> {{ c.capital }}</li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Native Name:</strong> {{ c.nativeName }}
+          </li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Population:</strong> {{ c.population | number }}
+          </li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Region:</strong> {{ c.region }}
+          </li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Sub Region:</strong> {{ c.subregion }}
+          </li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Capital:</strong> {{ c.capital }}
+          </li>
         </ul>
         <ul>
-          <li><strong>Top Level Domain:</strong> {{ c.topLevelDomain }}</li>
-          <li><strong>Currencies:</strong> {{ currencies }}</li>
-          <li><strong>Languages:</strong> {{ languages }}</li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Top Level Domain:</strong> {{ c.topLevelDomain }}
+          </li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Currencies:</strong> {{ currencies }}
+          </li>
+          <li [ngClass]="mode ? 'darkMode' : ''">
+            <strong>Languages:</strong> {{ languages }}
+          </li>
         </ul>
       </div>
       <div class="footer">
         <strong>Border Countries:</strong>
         <div class="group-btn">
-          <button mat-raised-button class="btn" *ngFor="let border of borders">
+          <button
+            mat-raised-button
+            class="btn"
+            *ngFor="let border of borders"
+            [ngClass]="mode ? 'darkMode' : ''"
+          >
             {{ border }}
           </button>
         </div>

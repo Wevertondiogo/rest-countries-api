@@ -12,8 +12,10 @@ import { Country } from './country.model';
 export class AppService {
   private dataSourceSearch = new BehaviorSubject<string>('');
   private dataSourceRegion = new BehaviorSubject<string>('');
+  private mode = new BehaviorSubject<boolean>(false);
   dataSearch = this.dataSourceSearch.asObservable();
   dataRegion = this.dataSourceRegion.asObservable();
+  getMode = this.mode.asObservable();
   constructor(private _http: HttpClient) {}
 
   httpOptions = {
@@ -34,5 +36,8 @@ export class AppService {
     return this._http
       .get<Country[]>(`https://restcountries.eu/rest/v2/region/${region}`)
       .pipe(retry(2));
+  }
+  setMode(mode: boolean) {
+    return this.mode.next(mode);
   }
 }

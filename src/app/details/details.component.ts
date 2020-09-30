@@ -14,6 +14,7 @@ export class DetailsComponent implements OnInit {
   currencies: Country[];
   languages: any[] = [];
   borders: any;
+  mode: boolean;
   constructor(
     private route: ActivatedRoute,
     private _service: AppService,
@@ -22,6 +23,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getByid();
     this.setInfo();
+    this._service.getMode.subscribe((mode) => (this.mode = mode));
   }
   back(): void {
     this.router.navigate(['/home']);

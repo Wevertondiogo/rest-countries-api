@@ -1,12 +1,19 @@
 mat-toolbar {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 0 3px hsl(0, 0%, 52%);
+  &.darkMode {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 0 3px hsl(209, 23%, 22%);
+  }
   padding: 12px 0;
   &-row {
     width: 90%;
     margin: 0 auto;
     .title {
       color: hsl(200, 15%, 8%);
+      &.darkText {
+        color: hsl(0, 0%, 100%);
+      }
       font: {
         family: "Nunito Sans";
         size: 1.6rem;
@@ -33,6 +40,11 @@ mat-toolbar {
         height: 21px;
         margin-right: 8px;
         transform: rotate(138deg);
+      }
+      span {
+        &.darkText {
+          color: hsl(0, 0%, 100%);
+        }
       }
     }
   }

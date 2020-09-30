@@ -1,10 +1,23 @@
-<mat-toolbar>
+<mat-toolbar [ngClass]="mode ? 'darkMode' : ''">
   <mat-toolbar-row>
-    <span class="title">Where in the world?</span>
+    <span class="title" [ngClass]="mode ? 'darkText' : ''"
+      >Where in the world?</span
+    >
     <span class="spacer"></span>
-    <span class="mode">
-      <img src="../../assets/2x/outline_brightness_2_black_18dp.png" alt="" />
-      <span class="toggle-mode"> Dark Mode </span>
+    <span class="mode" (click)="modeColor()">
+      <img
+        src="../../assets/2x/outline_brightness_3_black_18dp.png"
+        alt=""
+        *ngIf="!mode"
+      />
+      <img
+        src="../../assets/1x/baseline_brightness_3_white_18dp.png"
+        alt=""
+        *ngIf="mode"
+      />
+      <span class="toggle-mode" [ngClass]="mode ? 'darkText' : ''">
+        Dark Mode
+      </span>
     </span>
   </mat-toolbar-row>
 </mat-toolbar>

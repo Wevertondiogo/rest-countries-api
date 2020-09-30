@@ -3,12 +3,15 @@
     <mat-card
       *ngFor="let country of countries"
       (click)="sendRoute(country.name)"
+      [ngClass]="mode ? 'modeDark' : ''"
     >
       <img mat-card-image [src]="country.flag" />
       <mat-card-content>
-        <h3>{{ country.name }}</h3>
-        <ul>
-          <li><strong>Population:</strong> {{ country.population | number }}</li>
+        <h3 [ngClass]="mode ? 'modeDarkText' : ''">{{ country.name }}</h3>
+        <ul [ngClass]="mode ? 'modeDarkText' : ''">
+          <li>
+            <strong>Population:</strong> {{ country.population | number }}
+          </li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Capital:</strong> {{ country.capital }}</li>
         </ul>
@@ -19,12 +22,15 @@
     <mat-card
       *ngFor="let country of searchCountries"
       (click)="sendRoute(country.name)"
+      [ngClass]="mode ? 'modeDark' : ''"
     >
       <img mat-card-image [src]="country.flag" />
       <mat-card-content>
-        <h3>{{ country.name }}</h3>
-        <ul>
-          <li><strong>Population:</strong> {{ country.population | number }}</li>
+        <h3 [ngClass]="mode ? 'modeDarkText' : ''">{{ country.name }}</h3>
+        <ul [ngClass]="mode ? 'modeDarkText' : ''">
+          <li>
+            <strong>Population:</strong> {{ country.population | number }}
+          </li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Capital:</strong> {{ country.capital }}</li>
         </ul>
@@ -32,12 +38,18 @@
     </mat-card>
   </ng-container>
   <ng-container *ngIf="boolRegion && !boolSearch">
-    <mat-card *ngFor="let country of regions" (click)="sendRoute(country.name)">
+    <mat-card
+      *ngFor="let country of regions"
+      (click)="sendRoute(country.name)"
+      [ngClass]="mode ? 'modeDark' : ''"
+    >
       <img mat-card-image [src]="country.flag" />
       <mat-card-content>
-        <h3>{{ country.name }}</h3>
-        <ul>
-          <li><strong>Population:</strong> {{ country.population | number }}</li>
+        <h3 [ngClass]="mode ? 'modeDarkText' : ''">{{ country.name }}</h3>
+        <ul [ngClass]="mode ? 'modeDarkText' : ''">
+          <li>
+            <strong>Population:</strong> {{ country.population | number }}
+          </li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Capital:</strong> {{ country.capital }}</li>
         </ul>

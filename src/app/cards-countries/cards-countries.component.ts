@@ -15,13 +15,14 @@ export class CardsCountriesComponent implements OnInit {
   regions: Country[];
   boolSearch: boolean = false;
   boolRegion: boolean = false;
+  mode: boolean;
   constructor(private _service: AppService, private router: Router) {}
 
   ngOnInit(): void {
     this._service.getCoutries().subscribe((country: Country[]) => {
       this.countries = country;
     });
-
+    this._service.getMode.subscribe((mode) => (this.mode = mode));
     this.search();
     this.filterRegion();
   }

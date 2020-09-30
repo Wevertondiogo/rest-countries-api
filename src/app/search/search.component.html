@@ -1,6 +1,8 @@
 <div class="container">
-  <form>
-    <div class="material-icons">search</div>
+  <form [ngClass]="mode ? 'modeDark' : ''">
+    <div class="material-icons" [ngClass]="mode ? 'modeDarkText' : ''">
+      search
+    </div>
     <input
       type="text"
       placeholder="Search for a country..."
@@ -8,16 +10,36 @@
       [(ngModel)]="searchText"
       name="searchText"
       (input)="search(input)"
+      [ngClass]="mode ? 'modeDarkText' : ''"
     />
   </form>
 
-  <ng-select
-    (change)="sendRegion($event)"
-    class="custom"
-    [items]="regions"
-    bindLabel="name"
-    placeholder="Filter by Region"
-    [(ngModel)]="selectedCity"
-  >
-  </ng-select>
+  <div class="box">
+    <div class="select-box">
+      <div class="options-container" [ngClass]="mode ? 'modeDark' : ''">
+        <label
+          class="option"
+          *ngFor="let region of regions"
+          [ngClass]="mode ? 'modeDark' : ''"
+        >
+          <input
+            type="radio"
+            class="radio"
+            [id]="region"
+            name="category"
+            (change)="sendRegion($event)"
+          />
+          <label class="tst" [for]="region">{{ region }}</label>
+        </label>
+      </div>
+      <div class="selected-container" [ngClass]="mode ? 'modeDark' : ''">
+        <div class="selected" [ngClass]="mode ? 'modeDark' : ''">
+          Filter By Region
+        </div>
+        <div class="material-icons" [ngClass]="mode ? 'modeDark' : ''">
+          keyboard_arrow_down
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
