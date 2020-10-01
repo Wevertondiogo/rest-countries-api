@@ -49,3 +49,42 @@ mat-toolbar {
     }
   }
 }
+
+// Responsive
+
+@media (min-width: 375px) and (max-width: 500px) {
+  mat-toolbar {
+    &-row {
+      width: 100%;
+      .title {
+        font-size: 1rem;
+      }
+      img {
+        margin-right: 4px !important;
+        width: 19px !important;
+        height: 19px !important;
+      }
+      .toggle-mode {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@media (min-width: 600px) and (max-width: 999px) {
+  mat-toolbar {
+    &-row {
+      width: 95%;
+      .title {
+        font-size: 1rem;
+      }
+      img {
+        margin-right: 4px !important;
+        width: 19px !important;
+        height: 19px !important;
+      }
+      .toggle-mode {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

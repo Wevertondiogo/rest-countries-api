@@ -67,7 +67,7 @@
             weight: 600;
             family: "Nunito Sans", sans-serif;
           }
-          &:nth-child(2) {
+          &:last-child {
             margin-left: 10%;
           }
           li {
@@ -104,6 +104,51 @@
             background-color: hsl(209, 23%, 22%);
             color: hsl(0, 0%, 100%);
             box-shadow: 0 0 3px hsl(209, 23%, 22%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media (min-width: 375px) and (max-width: 999px) {
+  .box {
+    margin-top: 40px !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    padding: 0;
+    .img {
+      width: 95% !important;
+      height: auto !important;
+      margin: 0 auto;
+    }
+    .info-country {
+      margin: 40px 2% !important;
+      width: 70% !important;
+      flex-direction: column;
+      h1 {
+        font-size: 1.6rem !important;
+      }
+      .list {
+        flex-direction: column;
+        ul {
+          font-size: 0.9rem !important;
+          &:last-child {
+            margin-left: 0 !important;
+          }
+        }
+      }
+      .footer {
+        flex-wrap: wrap;
+        width: 85vw;
+        .group-btn {
+          margin-top: 10px;
+          width: 100%;
+          .btn {
+            width: 90px;
+            justify-content: center;
           }
         }
       }

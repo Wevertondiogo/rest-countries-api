@@ -44,3 +44,25 @@
     }
   }
 }
+
+// Responsive
+
+@media (min-width: 375px) and (max-width: 599px) {
+  .card-group {
+    margin: 115px auto;
+    mat-card {
+      width: 70%;
+      margin: 30px auto;
+    }
+  }
+}
+@media (min-width: 600px) and (max-width: 999px) {
+  .card-group {
+    margin: 115px auto;
+    mat-card {
+      width: 50%;
+      margin: 30px auto;
+      height: 400px !important;
+    }
+  }
+}

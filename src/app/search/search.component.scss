@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   .modeDark {
     background-color: hsl(209, 23%, 22%);
@@ -167,4 +168,34 @@
 }
 ::-webkit-input-placeholder {
   // color: hsl(200, 15%, 8%);
+}
+
+// Responsive
+
+@media (min-width: 375px) and (max-width: 999px) {
+  .container {
+    margin: 35px 0 70px 0;
+    form {
+      position: relative;
+      left: 30px;
+      width: 96% !important;
+      .material-icons {
+        padding-right: 15px;
+      }
+    }
+    .select-box {
+      position: relative;
+      left: 30px;
+      margin-top: 40px;
+      width: 220px !important;
+    }
+    .selected {
+      font-size: 0.9rem !important;
+    }
+
+    .option {
+      padding: 7px 24px !important;
+      font-size: 0.8rem;
+    }
+  }
 }
