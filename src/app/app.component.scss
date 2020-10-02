@@ -1,0 +1,41 @@
+$dark-mode-elements: hsl(209, 23%, 22%);
+$dark-mode-bg: hsl(207, 26%, 17%);
+$light-mode-text: hsl(200, 15%, 8%);
+$light-mode-input: hsl(0, 0%, 52%);
+$light-mode-bg: hsl(0, 0%, 98%);
+$dark-mode-and-light-mode-elements: hsl(0, 0%, 100%);
+%d-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+%d-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%d-column {
+  display: flex;
+  flex-direction: column;
+}
+%d-column-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+%d-baseline-wrap {
+  display: flex;
+  justify-content: baseline;
+  flex-wrap: wrap;
+}
+%d-evenly-wrap-center {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@mixin width-and-height($width, $height) {
+  width: $width;
+  height: $height;
+}

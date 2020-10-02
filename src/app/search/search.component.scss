@@ -1,24 +1,19 @@
+@use '../app.component.scss' as *;
 .container {
-  width: 90%;
-  height: 60px;
-  margin: 60px auto auto auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @extend %d-between;
   flex-wrap: wrap;
+  @include width-and-height(90%, 60px);
+  margin: 60px auto auto auto;
 
   .modeDark {
-    background-color: hsl(209, 23%, 22%);
-    box-shadow: 0 0 3px hsl(207, 26%, 17%);
+    background-color: $dark-mode-elements;
+    box-shadow: 0 0 3px $dark-mode-bg;
   }
   form {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 35%;
-    height: 100%;
-    background-color: hsl(0, 0%, 100%);
-    box-shadow: 0 0 2px hsl(0, 0%, 52%);
+    @extend %d-between;
+    @include width-and-height(35%, 100%);
+    background-color: $dark-mode-and-light-mode-elements;
+    box-shadow: 0 0 2px $light-mode-input;
     mat-form-field {
       height: 60px;
     }
@@ -28,8 +23,8 @@
       color: hsl(200, 15%, 8%);
 
       &.modeDarkText {
-        background-color: hsl(209, 23%, 22%);
-        color: hsl(0, 0%, 100%);
+        background-color: $dark-mode-elements;
+        color: $dark-mode-and-light-mode-elements;
       }
 
       font: {
@@ -45,24 +40,22 @@
 
     .material-icons {
       padding-left: 20px;
-      color: hsl(200, 15%, 8%);
+      color: $light-mode-text;
       opacity: 0.5;
       &.modeDarkText {
-        color: hsl(0, 0%, 100%);
+        color: $dark-mode-and-light-mode-elements;
         opacity: 1;
       }
     }
   }
   .box {
-    width: 14%;
-    height: 100%;
+    @include width-and-height(14%, 100%);
     margin-right: 1%;
 
     .select-box {
-      display: flex;
-      flex-direction: column;
+      @extend %d-column;
       .options-container {
-        background-color: hsl(0, 0%, 100%);
+        background-color: $dark-mode-and-light-mode-elements;
         color: hsl(200, 15%, 8%);
         max-height: 0;
         width: 100%;
@@ -79,30 +72,25 @@
           weight: 600;
         }
         &.modeDark {
-          background-color: hsl(209, 23%, 22%);
-          color: hsl(0, 0%, 100%);
+          background-color: $dark-mode-elements;
+          color: $dark-mode-and-light-mode-elements;
         }
       }
       .selected-container {
-        // background-color: red;
         display: flex;
         align-items: center;
         position: relative;
-        background-color: hsl(0, 0%, 100%);
-        box-shadow: 0 0 2px hsl(0, 0%, 52%);
+        background-color: $dark-mode-and-light-mode-elements;
+        box-shadow: 0 0 2px $light-mode-input;
         cursor: pointer;
-        // height: 100%;
         &.modeDark {
-          background-color: hsl(209, 23%, 22%);
-          box-shadow: 0 0 3px hsl(207, 26%, 17%);
-          color: hsl(0, 0%, 100%);
+          background-color: $dark-mode-elements;
+          box-shadow: 0 0 3px $dark-mode-bg;
+          color: $dark-mode-and-light-mode-elements;
         }
         .selected {
+          @extend %d-center;
           top: 2px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
           height: 33px;
           box-shadow: none;
           color: hsl(200, 15%, 8%);
@@ -113,7 +101,7 @@
             weight: 600;
           }
           &.modeDark {
-            color: hsl(0, 0%, 100%);
+            color: $dark-mode-and-light-mode-elements;
             box-shadow: none;
           }
         }
@@ -132,8 +120,8 @@
         padding: 10px 24px;
         cursor: pointer;
         &:hover {
-          background-color: hsl(209, 23%, 22%);
-          color: hsl(0, 0%, 100%);
+          background-color: $dark-mode-elements;
+          color: $dark-mode-and-light-mode-elements;
         }
         &.modeDark {
           box-shadow: none;
@@ -156,7 +144,7 @@
         background-color: transparent;
         color: hsl(200, 15%, 8%);
         &.modeDark {
-          color: hsl(0, 0%, 100%);
+          color: $dark-mode-and-light-mode-elements;
           box-shadow: none;
         }
       }

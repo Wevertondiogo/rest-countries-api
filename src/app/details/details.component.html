@@ -56,7 +56,7 @@
             class="btn"
             *ngFor="let border of borders"
             [ngClass]="mode ? 'darkMode' : ''"
-            (click)="sendRoute($event)"
+            (click)="sendToRoute($event)"
           >
             {{ border }}
           </button>

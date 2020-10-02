@@ -1,18 +1,19 @@
+@use '../app.component.scss' as *;
 mat-toolbar {
-  background-color: hsl(0, 0%, 100%);
-  box-shadow: 0 0 3px hsl(0, 0%, 52%);
+  background-color: $dark-mode-and-light-mode-elements;
+  box-shadow: 0 0 3px $light-mode-input;
   &.darkMode {
-    background-color: hsl(209, 23%, 22%);
-    box-shadow: 0 0 3px hsl(209, 23%, 22%);
+    background-color: $dark-mode-elements;
+    box-shadow: 0 0 3px $dark-mode-elements;
   }
   padding: 12px 0;
   &-row {
     width: 90%;
     margin: 0 auto;
     .title {
-      color: hsl(200, 15%, 8%);
+      color: $light-mode-text;
       &.darkText {
-        color: hsl(0, 0%, 100%);
+        color: $dark-mode-and-light-mode-elements;
       }
       font: {
         family: "Nunito Sans";
@@ -21,7 +22,7 @@ mat-toolbar {
       }
     }
     .toggle-mode {
-      color: hsl(200, 15%, 8%);
+      color: $light-mode-text;
       font: {
         family: "Nunito Sans";
         size: 0.9rem;
@@ -43,7 +44,7 @@ mat-toolbar {
       }
       span {
         &.darkText {
-          color: hsl(0, 0%, 100%);
+          color: $dark-mode-and-light-mode-elements;
         }
       }
     }

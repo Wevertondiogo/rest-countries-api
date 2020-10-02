@@ -1,18 +1,18 @@
+@use '../app.component.scss' as *;
 .container {
   width: 100%;
-  // background-color: red;
   margin-top: 5%;
   .back {
     width: 88%;
     margin: 0 auto;
     .btn {
       padding: 2px 35px;
-      box-shadow: 0 0 3px hsl(0, 0%, 52%);
-      color: hsl(200, 15%, 8%);
+      box-shadow: 0 0 3px $light-mode-input;
+      color: $light-mode-text;
       &.darkMode {
-        background-color: hsl(209, 23%, 22%);
-        color: hsl(0, 0%, 100%);
-        box-shadow: 0 0 3px hsl(209, 23%, 22%);
+        background-color: $dark-mode-elements;
+        color: $dark-mode-and-light-mode-elements;
+        box-shadow: 0 0 3px $dark-mode-elements;
       }
       font: {
         weight: 600;
@@ -27,24 +27,21 @@
     display: flex;
     justify-content: space-around;
     &.darkMode {
-      color: hsl(0, 0%, 100%);
+      color: $dark-mode-and-light-mode-elements;
     }
     .img {
-      width: 43%;
-      height: 420px;
+      @include width-and-height(43%, 420px);
     }
     .info-country {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
+      @extend %d-column-center;
       margin-left: 5%;
       width: 40%;
 
       h1 {
         width: 100%;
-        color: hsl(200, 15%, 8%);
+        color: $light-mode-text;
         &.darkMode {
-          color: hsl(0, 0%, 100%);
+          color: $dark-mode-and-light-mode-elements;
         }
 
         font: {
@@ -60,7 +57,7 @@
           margin: 0;
           padding: 0;
           &.darkMode {
-            color: hsl(0, 0%, 100%);
+            color: $dark-mode-and-light-mode-elements;
           }
           font: {
             size: 1rem;
@@ -73,37 +70,32 @@
           li {
             list-style: none;
             margin: 18px 0;
-            color: hsl(200, 15%, 8%);
+            color: $light-mode-text;
             &.darkMode {
-              color: hsl(0, 0%, 100%);
+              color: $dark-mode-and-light-mode-elements;
             }
           }
         }
       }
     }
     .footer {
+      @extend %d-between;
       margin: 7% 0 0 0;
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       .group-btn {
-        width: 78%;
-        height: 40px;
-        display: flex;
-        justify-content: baseline;
-        flex-wrap: wrap;
+        @extend %d-baseline-wrap;
+        @include width-and-height(78%, 40px);
         .btn {
-          color: hsl(200, 15%, 8%);
+          color: $light-mode-text;
           margin: 5px;
           padding: 0 38px;
           height: 28px;
           display: flex;
           align-items: center;
           &.darkMode {
-            background-color: hsl(209, 23%, 22%);
-            color: hsl(0, 0%, 100%);
-            box-shadow: 0 0 3px hsl(209, 23%, 22%);
+            background-color: $dark-mode-elements;
+            color: $dark-mode-and-light-mode-elements;
+            box-shadow: 0 0 3px $dark-mode-elements;
           }
         }
       }

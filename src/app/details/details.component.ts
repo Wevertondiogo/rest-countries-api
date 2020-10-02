@@ -63,7 +63,7 @@ export class DetailsComponent implements OnInit {
       });
     });
   }
-  sendRoute(e): void {
+  sendToRoute(e): void {
     const value = e.target.innerText;
     let id;
     this._service.getCountries().subscribe((data) => {
