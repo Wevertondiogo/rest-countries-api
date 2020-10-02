@@ -7,4 +7,5 @@ export interface Country {
   currencies?: any;
   languages?: string;
   borders?: any;
+  cioc?: string;
 }

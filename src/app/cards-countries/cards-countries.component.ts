@@ -19,7 +19,7 @@ export class CardsCountriesComponent implements OnInit {
   constructor(private _service: AppService, private router: Router) {}
 
   ngOnInit(): void {
-    this._service.getCoutries().subscribe((country: Country[]) => {
+    this._service.getCountries().subscribe((country: Country[]) => {
       this.countries = country;
     });
     this._service.getMode.subscribe((mode) => (this.mode = mode));

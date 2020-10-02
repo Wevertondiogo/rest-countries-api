@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
     });
   }
   getRegions(): void {
-    this._service.getCoutries().subscribe((country) => {
+    this._service.getCountries().subscribe((country) => {
       const filterRegions = country
         .map((item) => item.region)
         .filter((item, i, array) => i === array.indexOf(item) && item !== '');
